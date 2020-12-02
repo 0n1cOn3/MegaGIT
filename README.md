@@ -1,12 +1,9 @@
 # Hackpack-Downloader
 ## Description
 
-With Bash and Python, we can automatice the scripting setup into one process
-
+Have you collected Git Links from time to time and wanted to download them in one go? Then I present you the MegaPack_Downloader
 
 ## Getting Started
-
-Have you collected Git Links from time to time and wanted to download them in one go? Then I present you the MegaPack_Downloader
 
 There is a preconfigured repository list. 
 This can be adapted as needed. 
