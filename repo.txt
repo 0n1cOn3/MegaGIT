@@ -79,3 +79,13 @@ https://github.com/BlackArch/webshells.git
 https://github.com/EgeBalci/HERCULES.git
 https://github.com/EgeBalci/Cminer.git
 https://github.com/EgeBalci/The-Eye.git
+https://github.com/Tuhinshubhra/RED_HAWK
+https://github.com/shawarkhanethicalhacker/D-TECT
+https://github.com/rfunix/Pompem
+https://github.com/UltimateHackers/ReconDog
+https://github.com/1N3/XSSTracer
+https://github.com/deibit/cansina
+https://github.com/v3n0m-Scanner/V3n0M-Scanner
+https://github.com/Spaddex/Admin-Finder
+https://github.com/sqlmapproject/sqlmap.git
+https://github.com/frdmn/findmyhash

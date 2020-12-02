@@ -69,35 +69,35 @@ repobanner(){
     clear
     banner
     echo -e $GREEN "Reading repo list"
-    sleep 1
+    sleep 0.3
     clear
     banner
     echo -e $GREEN "Reading repo list."
-    sleep 1
+    sleep 0.3
     clear
     banner
     echo -e $GREEN "Reading repo list.."
-    sleep 1
+    sleep 0.3
     clear
     banner
     echo -e $GREEN "Reading repo list..."
-    sleep 1
+    sleep 0.3
     clear
     banner
     echo -e $GREEN "Reading repo list"
-    sleep 1
+    sleep 0.3
     clear
     banner
     echo -e $GREEN "Reading repo list."
-    sleep 1
+    sleep 0.3
     clear
     banner
     echo -e $GREEN "Reading repo list.."
-    sleep 1
+    sleep 0.3
     clear
     banner
     echo -e $GREEN "Reading repo list..."
-    sleep 1
+    sleep 0.3
     clear
     banner
 
@@ -117,6 +117,9 @@ setup(){
     echo -e $GREEN "Cloning in Progress... Please wait" && spinner $!
     i=$((i+1))
     done < $file  
+}
+
+cleanup(){
     reset
     banner
     echo -e "Everything has been cloned..."
@@ -128,3 +131,4 @@ setup(){
 }
 
 setup
+cleanup
