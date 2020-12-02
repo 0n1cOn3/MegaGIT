@@ -7,7 +7,7 @@
 #import repos
 path=$(pwd)
 file="repo.txt"
-maxgit=81
+maxgit=$(wc -l repo.txt)
 #Some Colors :) 
 RED="\e[31m"
 GREEN="\e[32m"
@@ -22,8 +22,8 @@ NORMAL="\e[0m"
 spinner()
 {
     local pid=$1
-    local delay=1.25
-    local spinstr='|/-\'
+    local delay=0.50
+    local spinstr='-._'
     while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
         local temp=${spinstr#?}
         printf " [%c]  " "$spinstr"
@@ -100,6 +100,7 @@ repobanner(){
     sleep 1
     clear
     banner
+
 }
 
 setup(){
@@ -111,7 +112,7 @@ setup(){
     #Reading each line 
     clear
     banner 
-    echo " Repo No. $i of $maxgit cloned "
+    echo " Repo No. $i of $maxgit file cloned "
     git clone --progress $line &
     echo -e $GREEN "Cloning in Progress... Please wait" && spinner $!
     i=$((i+1))
