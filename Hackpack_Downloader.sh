@@ -3,6 +3,7 @@
 #Linux Hacking Tools
 #Thx to Mehedi Shakeel for Recommendation
 #GUI Made by @0n1cOn3
+#Script from TheMasterCH/Pastebin
 # ///
 #import repos
 path=$(pwd)
