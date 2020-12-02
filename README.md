@@ -20,8 +20,6 @@ The script has the following features:
 (Can be observed continuously with "tail -f log.txt")
 - The number of links are automatically detected and displayed during cloning.
 
-Translated with www.DeepL.com/Translator (free version)
-
 ### Executing program
 
 ```
