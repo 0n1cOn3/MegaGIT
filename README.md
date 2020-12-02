@@ -23,7 +23,7 @@ The script has the following features:
 ### Executing program
 
 ```
-./Megascript_Downloader.sh
+./Hackpack_Downloader.sh
 ```
 
 ## Help
