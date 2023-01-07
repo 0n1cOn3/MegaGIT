@@ -36,5 +36,7 @@ No issues known. Open a issues ticket if you found any.
 
 ## Version History
 
+* 1.5
+    * Refactored whole project several times till of 07. January 2023. 
 * 0.1
     * Initial Release
