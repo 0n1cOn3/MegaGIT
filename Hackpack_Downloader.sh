@@ -1,9 +1,5 @@
 #!/bin/bash
-#AZZATSSINS
-#Linux Hacking Tools
-#Thx to Mehedi Shakeel for Recommendation
-#GUI Made by @0n1cOn3
-#Script from TheMasterCH/Pastebin
+# V1.5
 # ///
 #import repos
 path=$(pwd)
@@ -19,22 +15,21 @@ CYAN="\e[36m"
 RESTORE="\e[39"
 BOLD="\e[1m"
 NORMAL="\e[0m"
-#Spinner
-spinner()
-{
-    local pid=$1
-    local delay=0.50
-    local spinstr='-._'
-    while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
-        local temp=${spinstr#?}
-        printf " [%c]  " "$spinstr"
-        local spinstr=$temp${spinstr%"$temp"}
-        sleep $delay
-        printf "\b\b\b\b\b\b"
-    done
-    printf "    \b\b\b\b"
+# Spinner function
+spinner() {
+  local pid=$1
+  local delay=0.50
+  local spinstr='-._'
+  while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
+    printf " [%c]  " "$spinstr"
+    local temp=${spinstr#?}
+    local spinstr=$temp${spinstr%"$temp"}
+    sleep $delay
+    printf "\b\b\b\b\b\b"
+  done
+  printf "    \b\b\b\b"
 }
-#Banner
+
 banner(){
 clear
 echo -e $RED "
@@ -55,8 +50,8 @@ Welcome to
 ╚═════╝  ╚═════╝  ╚══╝╚══╝ ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 "
 echo ""
-echo -e $BLUE "Source based on @AZZATSSINS"
-echo -e $YELLOW "GUI made by @0n1cOn3"
+echo -e $BLUE "Original source based from @AZZATSSINS"
+echo -e $YELLOW "rewritten between Oct 2022 -- Jan 2023 @0n1cOn3"
 echo ""
 }
 
@@ -66,61 +61,41 @@ reset(){
     sleep 1.2
 }
 
-repobanner(){
-    clear
-    banner
-    echo -e $GREEN "Reading repo list"
-    sleep 0.3
-    clear
-    banner
-    echo -e $GREEN "Reading repo list."
-    sleep 0.3
-    clear
-    banner
-    echo -e $GREEN "Reading repo list.."
-    sleep 0.3
-    clear
-    banner
-    echo -e $GREEN "Reading repo list..."
-    sleep 0.3
-    clear
-    banner
-    echo -e $GREEN "Reading repo list"
-    sleep 0.3
-    clear
-    banner
-    echo -e $GREEN "Reading repo list."
-    sleep 0.3
-    clear
-    banner
-    echo -e $GREEN "Reading repo list.."
-    sleep 0.3
-    clear
-    banner
-    echo -e $GREEN "Reading repo list..."
-    sleep 0.3
-    clear
-    banner
-
-}
-
-setup(){
+setup() {
     banner
     sleep 3
-    repobanner
-    i=1  
-    while read line; do 
-    #Reading each line 
-    clear
-    banner 
-    echo " Repo No. $i of $maxgit file cloned "
-    git clone --progress $line &
-    echo -e $GREEN "Cloning in Progress... Please wait" && spinner $!
-    i=$((i+1))
-    done < $file  
+    for i in {1..10}; do
+        clear
+        banner
+        echo -e "$GREEN Reading repo list"
+        sleep 0.3
+        clear
+        banner
+        echo -e "$GREEN Reading repo list."
+        sleep 0.3
+        clear
+        banner
+        echo -e "$GREEN Reading repo list.."
+        sleep 0.3
+        clear
+        banner
+        echo -e "$GREEN Reading repo list..."
+        sleep 0.3
+    done
+
+    i=1
+    while read -r line; do
+        clear
+        banner
+        echo "Repo No. $i of $maxgit file cloned"
+        git clone --progress "$line" &
+        echo -e "$GREEN Cloning in Progress... Please wait"
+        spinner "$!"
+        i=$((i + 1))
+    done < "$file"
 }
 
-cleanup(){
+cleanup() {
     reset
     banner
     echo -e "Everything has been cloned..."
